@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://mrrivwig7ufy"]
+
+[ext_resource type="Script" uid="uid://cinoay0w1t4nh" path="res://game.gd" id="1_game"]
+[ext_resource type="Script" uid="uid://c6o2fec0i6olv" path="res://player.gd" id="2_player"]
+[ext_resource type="Texture2D" uid="uid://b7qeprpakrnfg" path="res://mrbean.png" id="3_bean"]
+
+[sub_resource type="CircleShape2D" id="PlayerShape"]
+radius = 12.0
+
+[node name="MazeAdventure" type="Node2D" unique_id=1352954652]
+script = ExtResource("1_game")
+
+[node name="Maze" type="Node2D" parent="." unique_id=426382150]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=751230678]
+script = ExtResource("2_player")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1357476109]
+shape = SubResource("PlayerShape")
+
+[node name="BeanSprite" type="Sprite2D" parent="Player" unique_id=67416230]
+position = Vector2(0, -5)
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("3_bean")
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=202160426]
+zoom = Vector2(0.5, 0.5)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1616177824]
